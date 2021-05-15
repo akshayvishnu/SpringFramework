@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       
+<context:annotation-config></context:annotation-config>
+<bean id="humanHeart" class="com.spring.spring_autowire_qualifier.Heart">
+	<property name="nameOfAnimal" value="Human"></property>
+	<property name="numberOfHeart" value="1"></property>
+</bean>
+<bean id="octopusHeart" class="com.spring.spring_autowire_qualifier.Heart">
+	<property name="nameOfAnimal" value="Octopus"></property>
+	<property name="numberOfHeart" value="3"></property>
+</bean>
+
+<!-- Setter injection of a dependent object using property tag-->
+<!-- 
+<bean id="human" class="com.spring.spring_autowire_qualifier.Human">
+	<property name="heart" ref="heartObject"></property>
+</bean>
+ -->
+ 
+ <!-- Injecting a dependent object using autowire byName -->
+<!-- <bean id="human" class="com.spring.spring_autowire_qualifier.Human" autowire="byName"></bean> -->
+
+<bean id="human" class="com.spring.spring_autowire_qualifier.Human"></bean>
+
+</beans>
